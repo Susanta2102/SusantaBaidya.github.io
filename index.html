@@ -138,6 +138,7 @@
                 padding: 2rem 0;
                 transition: all 0.3s ease;
                 z-index: 999;
+                overflow-y: auto;
             }
             
             .nav-menu.active {
@@ -145,12 +146,13 @@
             }
             
             .nav-link {
-                width: 200px;
+                width: 250px;
                 text-align: center;
                 margin: 0.5rem 0;
                 padding: 1rem;
                 border: 1px solid var(--glass-border);
                 border-radius: 10px;
+                font-size: 1rem;
             }
         }
 
@@ -733,6 +735,341 @@
             }
         }
 
+        /* Education Section */
+        .education-section {
+            background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);
+            position: relative;
+        }
+
+        .education-content {
+            margin-bottom: 4rem;
+        }
+
+        .education-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gold-gradient);
+            transform: translateX(-50%);
+        }
+
+        .education-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .education-item:nth-child(odd) .education-card {
+            margin-right: calc(50% + 2rem);
+        }
+
+        .education-item:nth-child(even) .education-card {
+            margin-left: calc(50% + 2rem);
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 3rem;
+            width: 25px;
+            height: 25px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 5px solid rgba(0, 0, 0, 0.9);
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(255, 216, 155, 0.5);
+        }
+
+        .education-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 216, 155, 0.1), transparent);
+            transition: all 0.8s ease;
+        }
+
+        .education-card:hover::before {
+            left: 100%;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(255, 216, 155, 0.2);
+        }
+
+        .education-year {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--gold-gradient);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .education-icon {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .education-details h3 {
+            color: var(--text-primary);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details h4 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .specialization {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .grade-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grade-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .grade-value {
+            color: var(--gold-color);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .education-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .highlight-tag {
+            background: rgba(255, 216, 155, 0.1);
+            border: 1px solid var(--gold-color);
+            color: var(--gold-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Certifications Subsection */
+        .certifications-section {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .subsection-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .subsection-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.1), transparent);
+            transition: all 0.8s ease;
+        }
+
+        .cert-card:hover::before {
+            left: 100%;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.1);
+        }
+
+        .cert-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .cert-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            flex-shrink: 0;
+            box-shadow: 0 8px 16px rgba(0, 242, 254, 0.3);
+        }
+
+        .cert-info h4 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-info p {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Mobile Education Styles */
+        @media (max-width: 768px) {
+            .education-timeline::before {
+                left: 30px;
+            }
+
+            .education-item::before {
+                left: 30px;
+                transform: translateX(-50%);
+            }
+
+            .education-item:nth-child(odd) .education-card,
+            .education-item:nth-child(even) .education-card {
+                margin-left: 70px;
+                margin-right: 0;
+            }
+
+            .education-year {
+                position: static;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+
+            .education-icon {
+                position: static;
+                margin-top: 1rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .cert-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .cert-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .education-card {
+                padding: 1.5rem;
+            }
+
+            .education-item:nth-child(odd) .education-card,
+            .education-item:nth-child(even) .education-card {
+                margin-left: 50px;
+            }
+
+            .education-timeline::before {
+                left: 20px;
+            }
+
+            .education-item::before {
+                left: 20px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
         /* Skills Section */
         .skills-section {
             background: var(--primary-gradient);
@@ -1208,6 +1545,7 @@
                 <li><a href="#home" class="nav-link">🏠 Home</a></li>
                 <li><a href="#about" class="nav-link">👨‍💻 About</a></li>
                 <li><a href="#experience" class="nav-link">💼 Experience</a></li>
+                <li><a href="#education" class="nav-link">🎓 Education</a></li>
                 <li><a href="#skills" class="nav-link">🛠️ Skills</a></li>
                 <li><a href="#projects" class="nav-link">🚀 Projects</a></li>
                 <li><a href="#contact" class="nav-link">📞 Contact</a></li>
@@ -1356,6 +1694,112 @@
                                 <span class="tech-tag">Weather Prediction</span>
                                 <span class="tech-tag">Flask</span>
                                 <span class="tech-tag">Geospatial Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">Academic foundation in AI/ML and statistical sciences</p>
+            </div>
+            
+            <div class="education-content scroll-animate">
+                <div class="education-timeline">
+                    <div class="education-item">
+                        <div class="education-card">
+                            <div class="education-year">2023-2025</div>
+                            <div class="education-details">
+                                <h3 class="degree">Master of Science (IT)</h3>
+                                <h4 class="institution">Indian Institute of Information Technology, Lucknow</h4>
+                                <p class="specialization">Artificial Intelligence & Machine Learning</p>
+                                <div class="grade-info">
+                                    <span class="grade-label">CGPA:</span>
+                                    <span class="grade-value">8.20/10</span>
+                                </div>
+                                <div class="education-highlights">
+                                    <span class="highlight-tag">Advanced AI/ML</span>
+                                    <span class="highlight-tag">Deep Learning</span>
+                                    <span class="highlight-tag">Computer Vision</span>
+                                </div>
+                            </div>
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-card">
+                            <div class="education-year">2020-2023</div>
+                            <div class="education-details">
+                                <h3 class="degree">Bachelor of Science (Honours)</h3>
+                                <h4 class="institution">Maharaja Bir Bikram College, Agartala</h4>
+                                <p class="specialization">Statistics</p>
+                                <div class="grade-info">
+                                    <span class="grade-label">Grade:</span>
+                                    <span class="grade-value">72%</span>
+                                </div>
+                                <div class="education-highlights">
+                                    <span class="highlight-tag">Statistical Analysis</span>
+                                    <span class="highlight-tag">Data Science</span>
+                                    <span class="highlight-tag">Mathematical Modeling</span>
+                                </div>
+                            </div>
+                            <div class="education-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Subsection -->
+            <div class="certifications-section scroll-animate">
+                <h3 class="subsection-title">Certifications & Achievements</h3>
+                <div class="certifications-grid">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <i class="fas fa-satellite cert-icon"></i>
+                            <div class="cert-info">
+                                <h4>AI/ML for Geodata Analysis</h4>
+                                <p>Indian Space Research Organisation (ISRO)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <i class="fas fa-trophy cert-icon"></i>
+                            <div class="cert-info">
+                                <h4>IIT JAM 2023</h4>
+                                <p>AIR 218 (out of 3563) - Top 6.12%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <i class="fas fa-code cert-icon"></i>
+                            <div class="cert-info">
+                                <h4>CodeSmash 2.0</h4>
+                                <p>171st of 3000+ participants (97/100)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <i class="fab fa-kaggle cert-icon"></i>
+                            <div class="cert-info">
+                                <h4>Kaggle Competition</h4>
+                                <p>0.81 score in PII Detection challenge</p>
                             </div>
                         </div>
                     </div>
